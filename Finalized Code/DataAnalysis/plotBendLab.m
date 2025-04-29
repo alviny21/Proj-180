@@ -1,5 +1,6 @@
-% Select the CSV file
+% Select the CSV file 'title.csv'
 [file, path] = uigetfile('4_26_duration_test.csv', 'Select the CSV file');
+
 if isequal(file, 0)
     disp('User selected Cancel');
     return;
@@ -25,7 +26,7 @@ idx_FarKneeX = find(strcmp(headers, 'FarKneeX'));
 idx_CloseKneeY = find(strcmp(headers, 'CloseKneeY'));
 idx_FarKneeY = find(strcmp(headers, 'FarKneeY'));
 
-%% ----- Apply Lowpass Filtering -----
+
 
 % Filter settings
 Fs = 100; % Assumed sample rate in Hz (you can adjust if known!)
@@ -40,7 +41,7 @@ sensorData(:, idx_FarKneeY) = filtfilt(b, a, sensorData(:, idx_FarKneeY));
 
 % (Optionally filter hips too if needed — easy to add.)
 
-%% --------- Re-Plot After Filtering ---------
+
 
 % Flexion/Extension
 figure;
