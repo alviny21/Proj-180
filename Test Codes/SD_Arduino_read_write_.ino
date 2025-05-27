@@ -1,7 +1,7 @@
 #include <SPI.h>
 #include <SD.h>
 
-#define SD_CS 10  // Chip Select pin for SD card
+#define SD_CS 26  // Chip Select pin for SD card
 
 void setup() {
     Serial.begin(115200);
